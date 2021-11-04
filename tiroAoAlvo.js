@@ -52,9 +52,6 @@ setInterval(atualizaTela, 600);
 function dispara(evento) {
     var x = evento.pageX - tela.offsetLeft;
     var y = evento.pageY - tela.offsetTop;
-
-    // desenhaCirculo(x, y, 20, 'blue');
-    desenhaTiro(x, y);
     if (
         x > xAleatorio - raio &&
         x < xAleatorio + raio &&
@@ -65,6 +62,7 @@ function dispara(evento) {
 
         adicionaNoContador();
     }
+    desenhaTiro(x, y);
 }
 
 tela.onclick = dispara;
