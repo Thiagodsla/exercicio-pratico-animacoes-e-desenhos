@@ -18,6 +18,21 @@ canvas {
     cursor: crosshair;
 }
 
+.quadro {
+    background-image: url(./img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 900px;
+    text-align: center;
+    border: solid;
+    margin: auto
+}
+
+footer {
+    margin-top: 10px;
+    color: red
+}
+
 
 /* canvas {
     cursor: none;

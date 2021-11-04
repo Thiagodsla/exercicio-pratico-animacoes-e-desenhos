@@ -4,10 +4,17 @@ var pincel = tela.getContext('2d');
 pincel.fillStyle = 'white';
 pincel.fillRect(0, 0, 900, 600);
 
-var raio = 10;
+var raio = 56;
 
 var xAleatorio;
 var yAleatorio;
+
+// function background {
+//     var background = new Image();
+//     background.src = './img/background.png';
+//     pincel.drawImage(fundoImg, x - 53, y - 55);
+// }
+// Image();
 
 function desenhaCirculo(x, y, raio, cor) {
     pincel.fillStyle = cor;
@@ -21,9 +28,12 @@ function limpaTela() {
 }
 
 function desenhaAlvo(x, y) {
-    desenhaCirculo(x, y, raio + 20, 'red');
-    desenhaCirculo(x, y, raio + 10, 'white');
-    desenhaCirculo(x, y, raio, 'red');
+    // desenhaCirculo(x, y, raio + 20, 'red');
+    // desenhaCirculo(x, y, raio + 10, 'white');
+    // desenhaCirculo(x, y, raio, 'red');
+    var fundoImg = new Image();
+    fundoImg.src = './img/terrorist.png';
+    pincel.drawImage(fundoImg, x - 53, y - 55);
 }
 
 function sorteiaPosicao(maximo) {
@@ -37,7 +47,7 @@ function atualizaTela() {
     desenhaAlvo(xAleatorio, yAleatorio);
 }
 
-setInterval(atualizaTela, 1000);
+setInterval(atualizaTela, 600);
 
 function dispara(evento) {
     var x = evento.pageX - tela.offsetLeft;
@@ -77,5 +87,5 @@ function resetar() {
 function desenhaTiro(x, y) {
     var fundoImg = new Image();
     fundoImg.src = './img/tiro.png';
-    pincel.drawImage(fundoImg, x - 40, y - 40);
+    pincel.drawImage(fundoImg, x - 20, y - 20);
 }
